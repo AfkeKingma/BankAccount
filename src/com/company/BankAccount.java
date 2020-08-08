@@ -2,12 +2,12 @@ package com.company;
 
 public class BankAccount {
     private String accountNumber;
-    private String balance;
+    private double balance;
     private String customerName;
     private String email;
     private String phonenumber;
 
-    public BankAccount(String accountNumber, String balance, String customerName, String email, String phonenumber) {
+    public BankAccount(String accountNumber, double balance, String customerName, String email, String phonenumber) {
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.customerName = customerName;
@@ -23,11 +23,11 @@ public class BankAccount {
         this.accountNumber = accountNumber;
     }
 
-    public String getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -54,4 +54,27 @@ public class BankAccount {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
+
+    public double addToBalance(double amount) {
+        if (getBalance() < 0) {
+            System.out.println("The balance cannot be negative for this account");
+            return 0;
+        } else {
+
+            balance = getBalance() + amount;
+            return balance;
+        }
+    }
+
+    public double removeFromBalance(double amount) {
+        if (getBalance() < 0) {
+            System.out.println("The balance cannot be negative for this account");
+            return 0;
+        } else {
+
+            balance = getBalance() + amount;
+            return balance;
+        }
+    }
 }
+
