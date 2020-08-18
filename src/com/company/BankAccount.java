@@ -71,8 +71,11 @@ public class BankAccount {
             System.out.println("The balance cannot be negative for this account");
             return 0;
         } else {
-
-            balance = getBalance() + amount;
+            balance = getBalance() - amount;
+            if(balance < 0) {
+                System.out.println("Withdraw with balance can not less than 0");
+                return 0;
+            }
             return balance;
         }
     }
